@@ -4,7 +4,14 @@ public class Eaglegotchi {
 	private String name;	
 	private String mood;
 	private int hungerLevel;
-	private String iconPath;
+	private String iconPath;	
+
+	public Eaglegotchi(String name, String mood, int hungerLevel, String iconPath) {
+		this.name = name;
+		this.mood = mood;
+		this.hungerLevel = hungerLevel;
+		this.iconPath = iconPath;
+	}
 	
 	public String getName() {
 		return name;
