@@ -36,5 +36,5 @@ public class Eaglegotchi {
 	}
 	public void setIconPath(String icon) {
 		this.iconPath = icon;
-	}	
+	}
 }
