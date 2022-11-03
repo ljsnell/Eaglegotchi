@@ -1,14 +1,19 @@
 package critter;
 
 import java.awt.FlowLayout;
+import java.sql.SQLException;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import utils.DBHandler;
+
 public class EaglegotchiExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
+		DBHandler dbHandler = new DBHandler();
+		Eaglegotchi usersGotchi = dbHandler.fetchEagleByUsername("LSNELL");		
 		try (Scanner scanner = new Scanner(System.in)) {
 			System.out.println("Enter your Eaglegotchi's Name:");
 			String eName = scanner.next();

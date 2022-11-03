@@ -13,6 +13,9 @@ public class Eaglegotchi {
 		this.iconPath = iconPath;
 	}
 	
+	public Eaglegotchi() {
+	}
+
 	public String getName() {
 		return name;
 	}
