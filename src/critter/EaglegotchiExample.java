@@ -1,6 +1,8 @@
 package critter;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Scanner;
 import javax.swing.JFrame;
@@ -30,7 +32,18 @@ public class EaglegotchiExample {
 			JLabel hungerLbl = new JLabel("Hunger: " + gotchi.getHungerLevel() + "/10");
 			JLabel iconLbl = new JLabel(icon);
 			JButton moodButton = new JButton("Play");
+			
+			moodButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("Play clicked");
+				}				
+			});
 			JButton hungerButton = new JButton("Feed");
+			hungerButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("Feed clicked");
+				}				
+			});
 			
 			frame.add(iconLbl);
 			jpanel.add(nameLbl);
@@ -45,5 +58,5 @@ public class EaglegotchiExample {
 			frame.pack();
 			frame.setVisible(true);
 		}
-	}
+	}	
 }
