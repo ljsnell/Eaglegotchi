@@ -14,14 +14,9 @@ import utils.DBHandler;
 public class EaglegotchiExample {
 
 	public static void main(String[] args) throws SQLException {
-//		DBHandler dbHandler = new DBHandler();
-//		Eaglegotchi usersGotchi = dbHandler.fetchEagleByUsername("LSNELL");		
+		DBHandler dbHandler = new DBHandler();
+		Eaglegotchi gotchi = dbHandler.fetchEagleByUsername("LSNELL");		
 		try (Scanner scanner = new Scanner(System.in)) {
-			System.out.println("Enter your Eaglegotchi's Name:");
-			String eName = scanner.next();
-			String iconPath = "egg.png";
-			Eaglegotchi gotchi = new Eaglegotchi(eName, "Indifferent", 3, iconPath);
-
 			JFrame frame = new JFrame();
 			JPanel jpanel = new JPanel();
 			jpanel.setLayout(new BoxLayout(jpanel, BoxLayout.Y_AXIS));
