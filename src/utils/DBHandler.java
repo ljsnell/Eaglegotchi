@@ -12,7 +12,7 @@ import critter.EaglegotchiExample;
 public class DBHandler {
 	
 	public Eaglegotchi fetchEagleByUsername(String username) throws SQLException {		
-	    Connection con = DriverManager.getConnection(
+	    	Connection con = DriverManager.getConnection(
 	            "jdbc:sqlserver://localhost:1433;database=falljava2022", "user", "password");
 	        PreparedStatement stmt = con.prepareStatement("SELECT * FROM [falljava2022].[dbo].[Eaglegotchi] where Username='" + username + "'");
 	        ResultSet rslt = stmt.executeQuery();
