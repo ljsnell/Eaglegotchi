@@ -29,7 +29,6 @@ public class EaglegotchiExample {
 			jpanel.add(nameLbl);
 			jpanel.add(moodLbl);
 			frame.add(jpanel);
-//			frame.add(moodLbl);
 			frame.setDefaultCloseOperation
 			       (JFrame.EXIT_ON_CLOSE);
 			frame.pack();
