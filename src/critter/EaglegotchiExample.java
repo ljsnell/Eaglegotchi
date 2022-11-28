@@ -36,6 +36,12 @@ public class EaglegotchiExample {
 			moodButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					System.out.println("Play clicked");
+					try {
+						String result = dbHandler.updateEagle(gotchi);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}				
 			});
 			JButton hungerButton = new JButton("Feed");

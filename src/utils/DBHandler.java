@@ -22,4 +22,13 @@ public class DBHandler {
 	        }
 			return gotchi;
 	      }
+	
+	public String updateEagle(Eaglegotchi eagle) throws SQLException {
+		Connection con = DriverManager.getConnection(
+	            "jdbc:sqlserver://localhost:1433;database=falljava2022", "user", "password");
+	    PreparedStatement stmt = con.prepareStatement("UPDATE [falljava2022].[dbo].[Eaglegotchi] SET Mood = 10 where Username='LSNELL'");
+	    int rslt = stmt.executeUpdate();
+		
+		return "Success";
+	}
 	}
