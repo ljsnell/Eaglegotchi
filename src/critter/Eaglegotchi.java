@@ -2,11 +2,11 @@ package critter;
 
 public class Eaglegotchi {
 	private String name;	
-	private String mood;
+	private int mood;
 	private int hungerLevel;
 	private String iconPath;	
 
-	public Eaglegotchi(String name, String mood, int hungerLevel, String iconPath) {
+	public Eaglegotchi(String name, int mood, int hungerLevel, String iconPath) {
 		this.name = name;
 		this.mood = mood;
 		this.hungerLevel = hungerLevel;
@@ -22,10 +22,10 @@ public class Eaglegotchi {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getMood() {
+	public int getMood() {
 		return mood;
 	}
-	public void setMood(String mood) {
+	public void setMood(int mood) {
 		this.mood = mood;
 	}
 	public int getHungerLevel() {
