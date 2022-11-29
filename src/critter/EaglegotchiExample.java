@@ -28,27 +28,32 @@ public class EaglegotchiExample {
 			frame.setLayout(new FlowLayout());
 			ImageIcon icon = new ImageIcon(gotchi.getIconPath());
 			JLabel nameLbl = new JLabel("Name: " +gotchi.getName());
-			JLabel moodLbl = new JLabel("Mood: " + gotchi.getMood().trim() + "/10");
+			JLabel moodLbl = new JLabel("Mood: " + gotchi.getMood() + "/10");
 			JLabel hungerLbl = new JLabel("Hunger: " + gotchi.getHungerLevel() + "/10");
 			JLabel iconLbl = new JLabel(icon);
-			JButton moodButton = new JButton("Play");
 			
+			JButton moodButton = new JButton("Play");			
 			moodButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("Play clicked");
 					try {
+						gotchi.setMood(gotchi.getMood()+1);
 						String result = dbHandler.updateEagle(gotchi);
 					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-				}				
+				}		
 			});
+
 			JButton hungerButton = new JButton("Feed");
 			hungerButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("Feed clicked");
-				}				
+					try {
+						gotchi.setHungerLevel(gotchi.getHungerLevel()+1);
+						String result = dbHandler.updateEagle(gotchi);
+					} catch (SQLException e1) {
+						e1.printStackTrace();
+					}
+				}
 			});
 			
 			frame.add(iconLbl);
