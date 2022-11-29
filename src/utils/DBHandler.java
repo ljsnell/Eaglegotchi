@@ -34,7 +34,7 @@ public class DBHandler {
 
 	public String updateEagle(Eaglegotchi eagle) throws SQLException {
 		Connection con = createConnection();
-		String updateQuery = "UPDATE [falljava2022].[dbo].[Eaglegotchi2] SET Mood = " + eagle.getMood() + " where Username='LSNELL'";
+		String updateQuery = "UPDATE [falljava2022].[dbo].[Eaglegotchi2] SET Mood = " + eagle.getMood() + ", HungerLevel = " + eagle.getHungerLevel() + " where Username='LSNELL'";
 		System.out.println(updateQuery);
 		PreparedStatement stmt = con.prepareStatement(updateQuery);
 	    int rslt = stmt.executeUpdate();
