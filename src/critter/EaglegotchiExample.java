@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -25,11 +26,16 @@ public class EaglegotchiExample {
 		JFrame frame = new JFrame();
 		JPanel jpanel = new JPanel();
 		jpanel.setLayout(new BoxLayout(jpanel, BoxLayout.Y_AXIS));
+		
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		System.out.println(timestamp);
 
-		// Random Mood & Hunger Level
-		gotchi.setMood(ThreadLocalRandom.current().nextInt(0, gotchi.getMood()));
-		gotchi.setHungerLevel(ThreadLocalRandom.current().nextInt(0, gotchi.getHungerLevel()));
-		dbHandler.updateEagle(gotchi);
+		// Random Mood & Hunger Level if they're already not at 0
+		if(gotchi.getMood() > 0 && gotchi.getHungerLevel() >0) {
+			gotchi.setMood(ThreadLocalRandom.current().nextInt(0, gotchi.getMood()));
+			gotchi.setHungerLevel(ThreadLocalRandom.current().nextInt(0, gotchi.getHungerLevel()));
+			dbHandler.updateEagle(gotchi);
+		}		
 		
 		frame.setLayout(new FlowLayout());
 		ImageIcon icon = new ImageIcon(gotchi.getIconPath());
