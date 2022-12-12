@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+
 import javax.swing.JFrame;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -24,6 +26,11 @@ public class EaglegotchiExample {
 		JPanel jpanel = new JPanel();
 		jpanel.setLayout(new BoxLayout(jpanel, BoxLayout.Y_AXIS));
 
+		// Random Mood & Hunger Level
+		gotchi.setMood(ThreadLocalRandom.current().nextInt(0, gotchi.getMood()));
+		gotchi.setHungerLevel(ThreadLocalRandom.current().nextInt(0, gotchi.getHungerLevel()));
+		dbHandler.updateEagle(gotchi);
+		
 		frame.setLayout(new FlowLayout());
 		ImageIcon icon = new ImageIcon(gotchi.getIconPath());
 		JLabel nameLbl = new JLabel("Name: " +gotchi.getName());
