@@ -30,7 +30,7 @@ public class EaglegotchiExample {
 			gotchi.setMood(ThreadLocalRandom.current().nextInt(0, gotchi.getMood()));
 			gotchi.setHungerLevel(ThreadLocalRandom.current().nextInt(0, gotchi.getHungerLevel()));
 			dbHandler.updateEagle(gotchi);
-		}		
+		}
 		
 		frame.setLayout(new FlowLayout());
 		ImageIcon icon = new ImageIcon(gotchi.getIconPath());
@@ -38,8 +38,8 @@ public class EaglegotchiExample {
 		JLabel moodLbl = new JLabel("Mood: " + gotchi.getMood() + "/10");
 		JLabel hungerLbl = new JLabel("Hunger: " + gotchi.getHungerLevel() + "/10");
 		JLabel iconLbl = new JLabel(icon);
-			
-		JButton moodButton = new JButton("Play");			
+
+		JButton moodButton = new JButton("Play");
 		moodButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -49,7 +49,7 @@ public class EaglegotchiExample {
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
-			}		
+			}
 		});
 
 		JButton hungerButton = new JButton("Feed");
@@ -64,7 +64,7 @@ public class EaglegotchiExample {
 				}
 			}
 		});
-			
+
 		frame.add(iconLbl);
 		jpanel.add(nameLbl);
 		jpanel.add(moodLbl);
@@ -76,6 +76,6 @@ public class EaglegotchiExample {
 		frame.setDefaultCloseOperation
 		       (JFrame.EXIT_ON_CLOSE);
 		frame.pack();
-		frame.setVisible(true);		
-	}	
+		frame.setVisible(true);
+	}
 }
